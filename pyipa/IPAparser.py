@@ -61,8 +61,8 @@ class IPAparser(object):
     raw = self.zip_obj.read(InfoPath)
 
     try:
-      InfoPlist = plistlib.readPlistFromString(raw)
+      InfoPlist = plistlib.loads(raw)
     except:
-      InfoPlist =  BPlistReader.plistWithString(raw)
+      InfoPlist =  BPlistReader.loads(raw)
 
     return InfoPlist
